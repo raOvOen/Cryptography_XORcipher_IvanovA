@@ -1,5 +1,6 @@
 # Cryptography XOR cipher 
 Realization of XOR cipher algorithm by me (2021)
+
 ATTENTION! It's advised NOT to use a symbol '_' as the password or input text to avoid collisions!
 
 - How to encrypt?
