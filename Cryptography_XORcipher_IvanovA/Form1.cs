@@ -24,19 +24,15 @@ namespace PR2IvanovAGBBO0118Gammirovanie
             string result = "";
             string mainstr = textBox1.Text;
             string key = KeyToRightSize(mainstr.Length, textBox2.Text);
-            //MessageBox.Show(key);
-            MessageBox.Show(mainstr.Length.ToString());
             for(int i=0; i<mainstr.Length; i++)
             {
                     result += FunctionPlus(StringToBinaryHalf(key[i], 0), StringToBinaryHalf(mainstr[i], 0));
                     result += FunctionPlus(StringToBinaryHalf(key[i], ((sizeOfChar / 2))), StringToBinaryHalf(mainstr[i], (sizeOfChar / 2)));
             }
-            //MessageBox.Show(result);
             textBox3.Text = BinaryToString(result);
         }
         private string FunctionPlus(string inputKey, string input)
         {
-            //MessageBox.Show(inputKey + "||" + input);
             string result = "";
             {
                 for(int i=0; i < input.Length; i++)
@@ -51,7 +47,6 @@ namespace PR2IvanovAGBBO0118Gammirovanie
                     }
                 }
             }
-            //MessageBox.Show(result);
             return result;
         }
         private string StringToBinaryHalf(char input, int q)
@@ -61,7 +56,6 @@ namespace PR2IvanovAGBBO0118Gammirovanie
             {
                 res_binary = "0" + res_binary; 
             }
-            //res_binary = res_binary.Substring(q, (sizeOfChar / 2));
             return StringGetHalf(res_binary, q);
         }
         private string StringGetHalf (string input, int q)
