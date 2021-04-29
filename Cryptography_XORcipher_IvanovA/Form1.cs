@@ -52,6 +52,7 @@ namespace PR2IvanovAGBBO0118Gammirovanie
         private string StringToBinaryHalf(char input, int q)
         {
             string res_binary = Convert.ToString(input, 2);
+            if (input == '_') res_binary = "0"; 
             while (res_binary.Length < sizeOfChar)
             {
                 res_binary = "0" + res_binary; 
@@ -74,6 +75,7 @@ namespace PR2IvanovAGBBO0118Gammirovanie
                 int degree = char_binary.Length - 1;
                 foreach (char c in char_binary)
                     a += Convert.ToInt32(c.ToString()) * (int)Math.Pow(2, degree--);
+                if (a == 0) { a = 95; } 
                 output += ((char)a).ToString();
             }
             return output;
@@ -103,7 +105,7 @@ namespace PR2IvanovAGBBO0118Gammirovanie
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Realization of XORcipher encryption algorithm by IvanovA (2021)\n\n- How to encrypt? \nFirst, you need to enter the text you want to encrypt in the top line. " +
+            MessageBox.Show("Realization of XORcipher encryption algorithm by IvanovA (2021)\nATTENTION!\nIt's advised NOT to use a symbol '_' as the password or input text to avoid collisions!\n\n- How to encrypt? \nFirst, you need to enter the text you want to encrypt in the top line. " +
                    "After that, select the key for encryption and press the 'Encrypt' button. You will get the encrypted text in the bottom line. If you need to use more keys, you can Move the encrypted text by pressing the relevant button and encrypt text again." +
                    "\nP.S. You can also choose encoding type (Unicode or ASCII)." +
                    "\n\n- How to Decrypt?" +
